@@ -12,9 +12,8 @@ import java.util.List;
 public class BankStatementAnalyzer {
 
 	public static final String RESOURCES = "src/Bank.csv";
-	private static final BankStatementCSVParser parser = new BankStatementCSVParser();
 
-	public static void main(String args[]) throws IOException {
+	public void analyze(CSVParser parser) throws IOException {
 		final Path path = Paths.get(RESOURCES);
 		final List<String> lines = Files.readAllLines(path);
 		final List<BankTransaction> transactionList = parser.parseLineFromCsv(lines);
